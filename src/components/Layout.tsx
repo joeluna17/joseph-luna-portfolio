@@ -20,7 +20,7 @@ const Layout = ({ children, title }: LayoutProps) => {
       </Head>
       <Header />
       <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', paddingBottom: '120px' }}>{children}</Box>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   )
 }

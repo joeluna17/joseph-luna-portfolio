@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import CodeIcon from '@mui/icons-material/Code'
 import Link from 'next/link'
 
-const pages = ['Contact', 'Pricing', 'Blog']
+const pages = ['Contact', 'Resume']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Header = () => {
@@ -36,7 +36,7 @@ const Header = () => {
     setAnchorElUser(null)
   }
   return (
-    <AppBar position='static' color='appPrimary'>
+    <AppBar position='static' color='appPrimary' style={{ background: 'rgb(29,28,33)', background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} color='appSecondary' />
@@ -83,7 +83,7 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href='/contact'>
+                  <Link href={page}>
                     <Typography textAlign='center'>{page}</Typography>
                   </Link>
                 </MenuItem>
@@ -112,7 +112,7 @@ const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link key={page} href='/contact'>
+              <Link key={page} href={page.toLowerCase()}>
                 <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                   {page}
                 </Button>

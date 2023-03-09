@@ -22,6 +22,8 @@
   --primary-color: #054a91;
   --secondary-color: #f17300;
   --tertiary-color: #dbe4ee;
+
+  --app-charcoal-color: #373831;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,6 +65,6 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #f2eee9;
   text-decoration: none;
 }

@@ -1,8 +1,10 @@
-import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { Button, Box, Typography, styled as MuiStyled } from '@mui/material'
 import Layout from '@/components/Layout'
+import PDFViewer from '@/components/PDFViewer'
+import Pill from '@/components/Pill'
 
 const SkillsContainter = MuiStyled(Box)(({ theme }) => ({
   height: 800,
@@ -16,19 +18,22 @@ type TSkillData = {
   id: number
   skill: string
   link: string
+  linkColor: string
 }
 
 const skillsData: TSkillData[] = [
-  { id: 1, skill: 'React', link: '#react' },
-  { id: 2, skill: 'Angular', link: '#angular' },
-  { id: 3, skill: 'Javscript', link: '#javascript' },
-  { id: 4, skill: 'Typescript', link: '#typescript' },
+  { id: 3, skill: 'Javscript', link: '#javascript', linkColor: '#fcdc00 ' },
+  { id: 4, skill: 'Typescript', link: '#typescript', linkColor: '#3178c6 ' },
+  { id: 1, skill: 'React', link: '#react', linkColor: '#61dafb' },
+  { id: 2, skill: 'Angular', link: '#angular', linkColor: '#dd0031' },
 ]
+
+const allSkills: string[] = ['React', 'Next.js', 'Angular', 'Redux', 'RxJS', 'Styled Components', 'Bootstrap', 'Material UI', 'Apollo', 'React Router', 'Translation Packages', 'LogRocket', 'NX', 'WordPress', 'Node.js', 'Express.js', 'Knex.js', 'Winston', 'Dotnet', 'Entity Framework', 'Azure App Insights', 'MSSQL', 'Postgres', 'MongoDB']
 
 export default function Home() {
   return (
     <Layout title='Joe Luna Dev'>
-      <Box style={{ position: 'relative', width: '100vw' }}>
+      <Box style={{ position: 'relative', width: '100vw', borderBottom: '10px solid #000' }}>
         <Box sx={{ position: 'absolute', zIndex: '555', fontWeight: 700, color: '#fff', top: '30%', left: 'calc(100vw - 98vw)', padding: 0, textAlign: 'left', '@media(max-width: 780px)': { textAlign: 'center' } }}>
           <Typography variant='h1'>
             Joseph Luna Portfolio<Blink>|</Blink>
@@ -37,12 +42,12 @@ export default function Home() {
             Full Stack Developer
           </Typography>
         </Box>
-        <Box style={{ position: 'relative', width: '100vw', height: '80vh', filter: 'blur(6px) grayscale(5%)' }}>
-          <Image alt='Joe Luna Hero' fill src='https://res.cloudinary.com/dbqzzps1w/image/upload/v1676857513/portfolio/homepage/port_hero_image.jpg' />
+        <Box style={{ position: 'relative', width: '100vw', height: '80vh' }}>
+          <Image alt='Joe Luna Hero' fill src='https://res.cloudinary.com/dbqzzps1w/image/upload/v1676857513/portfolio/homepage/port_hero_image.jpg' style={{ filter: 'blur(6px) grayscale(5%)' }} />
         </Box>
       </Box>
       <Box sx={{ width: '100%', maxWidth: `var(--max-width)`, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3% 3%' }}>
-        <Button variant='contained' color='appPrimary' style={{ width: '375px', height: '60px' }}>
+        <Button variant='contained' color='appPrimary' style={{ width: '375px', height: '60px', background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
           CONTACT ME
         </Button>
         <Box sx={{ width: '100%', maxWidth: `var(--max-width)`, display: 'flex', flexDirection: 'column', padding: '3% 0', '@media(max-width: 780px)': { textAlign: 'center' } }}>
@@ -54,13 +59,20 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
+      <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', marginBottom: '3%' }}>
+        <Box sx={{ display: 'flex', flexFlow: 'row wrap', width: '50%', '@media(max-width: 594px)': { width: '100%' } }}>
+          {allSkills.map((skill, index: number) => {
+            return <Pill key={index} title={skill} />
+          })}
+        </Box>
+      </Box>
       <Box className='knowlege-container' id='skills'>
         <Box style={{ display: 'flex' }}>
           {skillsData.map((skill, index: number) => {
             return (
               <Box key={skill.id}>
                 <a href={skill.link}>
-                  <Typography>
+                  <Typography style={{ color: skill.linkColor, fontSize: '50px' }}>
                     {skill.skill}&nbsp;{index !== skillsData.length - 1 && <span>|</span>}&nbsp;
                   </Typography>
                 </a>
@@ -70,25 +82,25 @@ export default function Home() {
         </Box>
       </Box>
       <SkillsContainter>
-        <Box id='react' style={{ height: 800, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box id='react' style={{ minHeight: 200, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Box>
             <a href='#skills'>Back Up &#x2191;</a>
           </Box>
           <Typography variant='h3'>React</Typography>
         </Box>
-        <Box id='angular' style={{ height: 800 }}>
+        <Box id='angular' style={{ minHeight: 200 }}>
           <Box>
             <a href='#skills'>Back Up &#x2191;</a>
           </Box>
           <Typography variant='h3'>Angular</Typography>
         </Box>
-        <Box id='javascript' style={{ height: 800 }}>
+        <Box id='javascript' style={{ minHeight: 200 }}>
           <Box>
             <a href='#skills'>Back Up &#x2191;</a>
           </Box>
           <Typography variant='h3'>Javascript</Typography>
         </Box>
-        <Box id='typescript' style={{ height: 800 }}>
+        <Box id='typescript' style={{ minHeight: 200 }}>
           <Box>
             <a href='#skills'>Back Up &#x2191;</a>
           </Box>

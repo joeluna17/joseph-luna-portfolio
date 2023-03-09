@@ -45,7 +45,8 @@ declare module '@mui/material/AppBar' {
 export const theme = createTheme({
   palette: {
     appPrimary: {
-      main: '#054a91',
+      // main: '#054a91',
+      main: '#38d8d6',
     },
     appSecondary: {
       main: '#f17300',
@@ -65,6 +66,9 @@ export const theme = createTheme({
     },
   },
   typography: {
+    allVariants: {
+      color: '#f2eee9',
+    },
     body1: {
       fontSize: '1.4rem',
     },
