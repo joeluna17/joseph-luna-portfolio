@@ -36,7 +36,7 @@ const Header = () => {
     setAnchorElUser(null)
   }
   return (
-    <AppBar position='static' color='appPrimary' style={{ background: 'rgb(29,28,33)', background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
+    <AppBar position='static' color='appPrimary' style={{ background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} color='appSecondary' />

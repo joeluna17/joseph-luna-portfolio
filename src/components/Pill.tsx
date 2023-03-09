@@ -29,13 +29,6 @@ const PillWrapper = styled.div`
   transition: all 0.3s ease-in-out;
   cursor: help;
 
-  .pill-title {
-    font-size: 18px;
-    color: #fff;
-    padding: 0;
-    font-weight: 700;
-  }
-
   :hover {
     transform: scale(1.1);
     margin: 0 8px;
@@ -55,6 +48,17 @@ const PillWrapper = styled.div`
     100% {
       box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
       transform: translatey(0px);
+    }
+  }
+
+  .pill-title {
+    font-size: 18px;
+    color: #fff;
+    padding: 0;
+    font-weight: 700;
+
+    :hover {
+      text-shadow: 0 5px 8px rgba(255, 255, 255, 0.4);
     }
   }
 `
