@@ -18,8 +18,8 @@ type TSkillData = {
 }
 
 const skillsData: TSkillData[] = [
-  { id: 3, skill: 'Javscript', link: '#javascript', linkColor: '#fcdc00 ' },
-  { id: 4, skill: 'Typescript', link: '#typescript', linkColor: '#3178c6 ' },
+  // { id: 3, skill: 'Javscript', link: '#javascript', linkColor: '#fcdc00 ' },
+  // { id: 4, skill: 'Typescript', link: '#typescript', linkColor: '#3178c6 ' },
   { id: 1, skill: 'React', link: '#react', linkColor: '#61dafb' },
   { id: 2, skill: 'Angular', link: '#angular', linkColor: '#dd0031' },
 ]
@@ -114,7 +114,7 @@ export default function Home() {
                     </AccordionSummary>
                     <AccordionDetails style={{ backgroundColor: '#2c2c2c' }}>
                       <Typography variant='body1'>
-                        <a href='https://paymentsoncheck.com/contribution/alex/8675b3fb-a0ce-492b-98b0-815f42f1f5a3' target='_blank' style={{ color: '#3178c6' }} rel='noreferrer'>
+                        <a href='https://paymentsoncheck.com/contribution/alex/8675b3fb-a0ce-492b-98b0-815f42f1f5a3' target='_blank' className='project-links-txt' rel='noreferrer'>
                           Check Payments
                         </a>
                         &nbsp;-&nbsp;This is a business project that I&apos;m partners in. For this application in our platform we have created a way for users to process payment using Stripe as out underlying payment processor. The goal to to accept payments for any of out user&apos;s needs, but this is a key area of infustructure to our overall goal.
@@ -127,7 +127,7 @@ export default function Home() {
                     </AccordionSummary>
                     <AccordionDetails style={{ backgroundColor: '#2c2c2c' }}>
                       <Typography variant='body1'>
-                        <a href='https://www.powertodo.net' target='_blank' style={{ color: '#3178c6' }} rel='noreferrer'>
+                        <a href='https://www.powertodo.net' target='_blank' className='project-links-txt' rel='noreferrer'>
                           Power Todos
                         </a>{' '}
                         - This is peronal project that is a work in progress. Ultimately, this goal of this application is to allow a user to create todos and allow them gain more insight on thier day to day.
@@ -140,7 +140,7 @@ export default function Home() {
                     </AccordionSummary>
                     <AccordionDetails style={{ backgroundColor: '#2c2c2c' }}>
                       <Typography variant='body1'>
-                        <a href='https://revohealthcare.netlify.app/' target='_blank' style={{ color: '#3178c6' }} rel='noreferrer'>
+                        <a href='https://revohealthcare.netlify.app/' target='_blank' className='project-links-txt' rel='noreferrer'>
                           REVO Healthcare
                         </a>
                         &nbsp;-&nbsp; This was a school project
@@ -174,9 +174,9 @@ export default function Home() {
                 <Typography variant='h3'>
                   Get <i>Angular!</i>
                 </Typography>
-                <Typography variant='body1'>I&apos;m totaly Angular! Pretty much all of my experince with Angular has been on projects that I unfortuanltey cannot share, but plan on making some demo applications for my portfolio so stay tuned for that. My experince ranges from enrollment applications, administration panel, and ecommerce cart to name a few. I really enjoy working in Angualar when I get the chance to so if you have a project I can help with bring it on!</Typography>
+                <Typography variant='body1'>I&apos;m totaly Angular 🤙! Pretty much all of my experince with Angular has been on projects that I unfortuanltey cannot share, but I plan on making some demo applications for my portfolio so stay tuned for that. My experince ranges from enrollment applications, administration panel, and ecommerce cart to name a few. I really enjoy working in Angualar when I get the chance to so if you have a project I can help with bring it on!</Typography>
                 <Box style={{ marginTop: '15px' }}>
-                  <Accordion>
+                  {/* <Accordion>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls='panel1a-content' id='panel1a-header' style={{ backgroundColor: '#2c2c2c' }}>
                       <Typography>Check Payments</Typography>
                     </AccordionSummary>
@@ -188,12 +188,12 @@ export default function Home() {
                         &nbsp;-&nbsp;This is a business project that I&apos;m partners in. For this application in our platform we have created a way for users to process payment using Stripe as out underlying payment processor. The goal to to accept payments for any of out user&apos;s needs, but this is a key area of infustructure to our overall goal.
                       </Typography>
                     </AccordionDetails>
-                  </Accordion>
+                  </Accordion> */}
                 </Box>
               </Box>
             </Box>
           </Box>
-          <Box className='project-container' id='javascript' style={{}}>
+          {/* <Box className='project-container' id='javascript' style={{}}>
             <Box>
               <a href='#skills'>Back Up &#x2191;</a>
             </Box>
@@ -204,7 +204,7 @@ export default function Home() {
               <a href='#skills'>Back Up &#x2191;</a>
             </Box>
             <Typography variant='h3'>Typescript</Typography>
-          </Box>
+          </Box> */}
         </Box>
       </MainContentWrapper>
     </Layout>
@@ -220,6 +220,7 @@ const MainContentWrapper = styled(Box)`
   justify-content: center;
   border-radius: 8px;
   box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.3);
+  margin: 1% 0;
 
   .about-me-container {
     width: 90%;
@@ -241,6 +242,9 @@ const MainContentWrapper = styled(Box)`
 
       .profile-img-container {
         width: 40%;
+        @media (max-width: 780px) {
+          width: 100%;
+        }
         .profile-img-one {
           height: 60%;
           width: 80%;
@@ -249,6 +253,9 @@ const MainContentWrapper = styled(Box)`
 
       .profile-txt-container {
         width: 60%;
+        @media (max-width: 780px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -330,6 +337,11 @@ const MainContentWrapper = styled(Box)`
         .project-text-content {
           width: 50%;
           padding: 1%;
+
+          .project-links-txt {
+            color: #3178c6;
+            font-size: 26px;
+          }
         }
         .project-img-wrapper {
           width: 50%;
