@@ -66,7 +66,7 @@ const ContactFrom = () => {
   }
 
   return (
-    <Box style={{ width: '50vw', maxWidth: '900px', textAlign: 'center' }}>
+    <Box sx={{ width: '50vw', maxWidth: '900px', textAlign: 'center', '@media(max-width: 794px)': { width: '80vw' } }}>
       <Typography variant='h2'>Contact Me</Typography>
       <ContactForm onSubmit={sendMessage}>
         <TextField sx={{ input: { color: '#fff' } }} value={firstName} label='First Name' onChange={(e) => setFirstName(e.target.value)} />
