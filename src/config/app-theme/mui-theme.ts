@@ -1,19 +1,19 @@
 import { createTheme } from '@mui/material/styles'
 
-declare module '@mui/material/styles' {
+// Update the Button's color prop options
+declare module '@mui/material/styles/createPalette' {
   interface Palette {
-    appPrimary: Palette['appPrimary']
-    appSecondary: Palette['appSecondary']
+    appPrimary: PaletteColor
+    appSecondary: PaletteColor
   }
 
   // allow configuration using `createTheme`
   interface PaletteOptions {
-    appPrimary?: PaletteOptions['appPrimary']
-    appSecondary: PaletteOptions['appSecondary']
+    appPrimary?: PaletteColorOptions
+    appSecondary: PaletteColorOptions
   }
 }
 
-// Update the Button's color prop options
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     appPrimary: true
@@ -21,20 +21,6 @@ declare module '@mui/material/Button' {
   }
 }
 
-declare module '@mui/material/styles' {
-  interface Palette {
-    appPrimary: Palette['appPrimary']
-    appSecondary: Palette['appSecondary']
-  }
-
-  // allow configuration using `createTheme`
-  interface PaletteOptions {
-    appPrimary?: PaletteOptions['appPrimary']
-    appSecondary: PaletteOptions['appSecondary']
-  }
-}
-
-// Update the AppBar color prop options
 declare module '@mui/material/AppBar' {
   interface AppBarPropsColorOverrides {
     appPrimary: true
@@ -45,7 +31,6 @@ declare module '@mui/material/AppBar' {
 export const theme = createTheme({
   palette: {
     appPrimary: {
-      // main: '#054a91',
       main: '#38d8d6',
     },
     appSecondary: {

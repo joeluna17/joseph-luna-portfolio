@@ -9,6 +9,7 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
+import ContactFrom from '@/components/ContactForm'
 
 type TSkillData = {
   id: number
@@ -30,22 +31,25 @@ export default function Home() {
   return (
     <Layout title='Joe Luna Dev'>
       <Box style={{ position: 'relative', width: '100vw', borderBottom: '10px solid #000' }}>
-        <Box sx={{ position: 'absolute', zIndex: '555', fontWeight: 700, color: '#fff', top: '30%', left: 'calc(100vw - 98vw)', padding: 0, textAlign: 'left', '@media(max-width: 780px)': { textAlign: 'center' } }}>
-          <Typography variant='h1'>
-            Joseph Luna Portfolio<Blink>|</Blink>
-          </Typography>
-          <Typography variant='h3' sx={{ marginTop: '2%', color: 'var(--tertiary-color)' }}>
-            Full Stack Developer
-          </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '65%', position: 'absolute', zIndex: '555', fontWeight: 700, color: '#fff', top: '12%', left: 'calc(100vw - 98vw)', padding: 0, textAlign: 'left', '@media(max-width: 994px)': { textAlign: 'center', alignItems: 'center', width: '100%', left: 0, top: '8%' } }}>
+          <Image style={{ width: '400px', height: '450px', borderRadius: '50px 0 50px 0' }} src={require('../assets/images/my-images/joe_two.jpg')} alt={'Joseph Luna profile photo two'} />
+          <Box style={{ backgroundColor: 'rgba(0,0,0,0.5)', padding: '2%', borderRadius: '8px', marginTop: '10px' }}>
+            <Typography variant='h1'>
+              Joseph Luna Portfolio<Blink>|</Blink>
+            </Typography>
+            <GradientText variant='h2'>Full Stack Developer</GradientText>
+          </Box>
         </Box>
         <Box style={{ position: 'relative', width: '100vw', height: '80vh' }}>
           <Image alt='Joe Luna Hero' fill src='https://res.cloudinary.com/dbqzzps1w/image/upload/v1676857513/portfolio/homepage/port_hero_image.jpg' style={{ filter: 'blur(6px) grayscale(5%)' }} />
         </Box>
       </Box>
       <Box sx={{ width: '100%', maxWidth: `var(--max-width)`, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3% 3%' }}>
-        <Button variant='contained' color='appPrimary' style={{ width: '375px', height: '60px', background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
-          CONTACT ME
-        </Button>
+        <a href='#contact-form'>
+          <Button variant='contained' color='appPrimary' style={{ width: '375px', height: '60px', background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
+            CONTACT ME
+          </Button>
+        </a>
       </Box>
       <MainContentWrapper>
         <Box className='about-me-container'>
@@ -95,7 +99,9 @@ export default function Home() {
                   <DoubleArrowIcon className='chevron-up-icon' />
                 </a>
               </Box>
-              <Typography variant='h3'>React</Typography>
+              <Typography variant='h3' style={{ color: '#61dafb' }}>
+                React
+              </Typography>
             </Box>
 
             <Box className='project-content-wrapper'>
@@ -162,7 +168,9 @@ export default function Home() {
                   <DoubleArrowIcon className='chevron-up-icon' />
                 </a>
               </Box>
-              <Typography variant='h3'>Angular</Typography>
+              <Typography variant='h3' style={{ color: '#dd0031' }}>
+                Angular
+              </Typography>
             </Box>
 
             <Box className='project-content-wrapper'>
@@ -206,6 +214,9 @@ export default function Home() {
             <Typography variant='h3'>Typescript</Typography>
           </Box> */}
         </Box>
+        <Box id='contact-form' style={{ marginBottom: '25px' }}>
+          <ContactFrom />
+        </Box>
       </MainContentWrapper>
     </Layout>
   )
@@ -213,7 +224,7 @@ export default function Home() {
 
 const MainContentWrapper = styled(Box)`
   background: linear-gradient(135deg, rgba(29, 28, 33, 1) 59%, rgba(56, 216, 214, 1) 200%);
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,13 +252,15 @@ const MainContentWrapper = styled(Box)`
       padding: 2%;
 
       .profile-img-container {
+        position: relative;
         width: 40%;
+
         @media (max-width: 780px) {
           width: 100%;
         }
         .profile-img-one {
-          height: 60%;
-          width: 80%;
+          width: 90%;
+          height: 65%;
         }
       }
 
@@ -276,6 +289,7 @@ const MainContentWrapper = styled(Box)`
       padding: 2%;
       border: 2px solid #fff;
       border-radius: 8px;
+      justify-content: center;
       @media (max-width: 594px) {
         width: 100%;
       }
@@ -289,6 +303,9 @@ const MainContentWrapper = styled(Box)`
     justify-content: center;
     width: 80%;
     padding: 3%;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
 
     .skills-link-wrapper {
       display: flex;
@@ -304,6 +321,9 @@ const MainContentWrapper = styled(Box)`
     align-items: center;
     margin-top: 50;
     width: 90%;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
 
     .project-container {
       display: flex;
@@ -337,6 +357,10 @@ const MainContentWrapper = styled(Box)`
         .project-text-content {
           width: 50%;
           padding: 1%;
+          @media (max-width: 780px) {
+            text-align: center;
+            width: 100%;
+          }
 
           .project-links-txt {
             color: #3178c6;
@@ -348,6 +372,9 @@ const MainContentWrapper = styled(Box)`
           display: flex;
           align-items: center;
           justify-content: center;
+          @media (max-width: 780px) {
+            width: 100%;
+          }
           .project-img {
             width: 300px;
           }
@@ -374,4 +401,19 @@ const Blink = styled.span`
       opacity: 0;
     }
   }
+`
+const GradientText = styled(Typography)`
+  /* Fallback: Set a background color. */
+  background-color: #00e1ff;
+  /* Create the gradient. */
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0.3%, rgba(56, 216, 214, 1) 50%);
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 `

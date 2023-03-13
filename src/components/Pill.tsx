@@ -19,7 +19,7 @@ const PillWrapper = styled.div`
   padding: 8px;
   min-width: 50px;
   min-height: 50px;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 8px;
   display: flex;
   justify-content: center;

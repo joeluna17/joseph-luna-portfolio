@@ -39,7 +39,7 @@ const Header = () => {
     <AppBar position='static' color='appPrimary' style={{ background: 'linear-gradient(135deg, rgba(29,28,33,1) 59%, rgba(56,216,214,1) 200%)' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} color='appSecondary' />
+          <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} htmlColor='#f17300' />
           <Typography
             variant='h6'
             noWrap
@@ -90,7 +90,7 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <CodeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} color='appSecondary' />
+          <CodeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} htmlColor='#f17300' />
           <Typography
             variant='h5'
             noWrap
