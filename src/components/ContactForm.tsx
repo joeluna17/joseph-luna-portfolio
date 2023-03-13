@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
@@ -7,17 +6,13 @@ import Button from '@mui/material/Button'
 import styled from 'styled-components'
 import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
+import IMessage from '@/interfaces/IMessage'
+import { sendMessageAsync } from '@/services/mail-service/mailService'
+import { IServiceResponse } from '@/interfaces/IServiceResponse'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />
 })
-
-interface IMessage {
-  to: string
-  from: string
-  subject: string
-  text: string
-}
 
 const ContactFrom = () => {
   const [openSuccess, setOpenSuccess] = useState(false)
@@ -46,11 +41,15 @@ const ContactFrom = () => {
         to: 'joeluna17@yahoo.com',
         from: 'joeluna17@outlook.com',
         subject: `Contact ${firstName.trim()} ${lastName.trim()} `,
-        text: ` My Email is: ${email.trim()} ` + message.trim(),
+        text: ` My email is: ${email.trim()} ` + message.trim(),
       }
-      await axios.post('http://localhost:4000/mail', msg)
-      setOpenSuccess(true)
-      resetForm()
+      const response: IServiceResponse = await sendMessageAsync(msg)
+      if (response.success) {
+        setOpenSuccess(true)
+        resetForm()
+      } else {
+        setOpenError(true)
+      }
     } catch (err: any) {
       setOpenError(true)
       console.error(err)
