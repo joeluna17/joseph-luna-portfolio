@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import CodeIcon from '@mui/icons-material/Code'
 import Link from 'next/link'
 
-const pages = ['Contact', 'Resume']
+const pages = ['Resume']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Header = () => {

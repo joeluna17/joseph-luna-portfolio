@@ -110,8 +110,8 @@ export default function Home() {
                   Just <i>React!</i>
                 </Typography>
                 <Typography variant='body1'>
-                  React is my go to when it comes to creating new projects or just creating proof of concepts both personally and professionally. I truely enjoy the simplicity the library offers, and how fast it allows development to scale. I feel most confortable architecthing and developing with in the React ecosystem. I have extensive experince with using Redux for application state as well as amy more packages and third part libraries. Here are just a few of many projects I create that are
-                  using React. Oh By the the way this portfolio site is using Nextjs!
+                  React is my go-to when it comes to creating new projects or just creating proof of concepts both personally and professionally. I truly enjoy the simplicity the library offers, and how fast it allows development to scale. I feel most comfortable architecting and developing with in the React ecosystem. I have extensive experience with using Redux for application state as well as many more packages and third part libraries. Here are just a few of many projects I create that are
+                  using React. Oh, by the way this portfolio site is using Nextjs!
                 </Typography>
                 <Box style={{ marginTop: '15px' }}>
                   <Accordion>
@@ -123,7 +123,7 @@ export default function Home() {
                         <a href='https://paymentsoncheck.com/contribution/alex/8675b3fb-a0ce-492b-98b0-815f42f1f5a3' target='_blank' className='project-links-txt' rel='noreferrer'>
                           Check Payments
                         </a>
-                        &nbsp;-&nbsp;This is a business project that I&apos;m partners in. For this application in our platform we have created a way for users to process payment using Stripe as out underlying payment processor. The goal to to accept payments for any of out user&apos;s needs, but this is a key area of infustructure to our overall goal.
+                        &nbsp;-&nbsp;This is a business project that I&apos;m partners in. For this application, we have created a way for users to process payment using Stripe as out underlying payment processor. The goal is to accept payments for any of our user&apos;s needs, but this is a key area of infrastructure to our overall goal.
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
@@ -136,7 +136,7 @@ export default function Home() {
                         <a href='https://www.powertodo.net' target='_blank' className='project-links-txt' rel='noreferrer'>
                           Power Todos
                         </a>{' '}
-                        - This is peronal project that is a work in progress. Ultimately, this goal of this application is to allow a user to create todos and allow them gain more insight on thier day to day.
+                        - This is personal project that is a work in progress. Ultimately, this goal of this application is to allow a user to create to-dos and allow them gain more insight on their day to day.
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
@@ -149,7 +149,7 @@ export default function Home() {
                         <a href='https://revohealthcare.netlify.app/' target='_blank' className='project-links-txt' rel='noreferrer'>
                           REVO Healthcare
                         </a>
-                        &nbsp;-&nbsp; This was a school project
+                        &nbsp;-&nbsp; This was a school project I created, we were tasked to create a healthcare platform that help users source healthcare costs as well as contribute to community feedback.
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
@@ -182,7 +182,7 @@ export default function Home() {
                 <Typography variant='h3'>
                   Get <i>Angular!</i>
                 </Typography>
-                <Typography variant='body1'>I&apos;m totaly Angular 🤙! Pretty much all of my experince with Angular has been on projects that I unfortuanltey cannot share, but I plan on making some demo applications for my portfolio so stay tuned for that. My experince ranges from enrollment applications, administration panel, and ecommerce cart to name a few. I really enjoy working in Angualar when I get the chance to so if you have a project I can help with bring it on!</Typography>
+                <Typography variant='body1'>I&apos;m totaly Angular 🤙! Pretty much all of my experience with Angular has been on projects that I unfortunately cannot share, but I plan on making some demo applications for my portfolio so stay tuned for that. My experience ranges from enrollment applications, administration panel, and ecommerce cart to name a few. I really enjoy working in Angular when I get the chance to so if you have a project I can help with bring it on!</Typography>
                 <Box style={{ marginTop: '15px' }}>
                   {/* <Accordion>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls='panel1a-content' id='panel1a-header' style={{ backgroundColor: '#2c2c2c' }}>
