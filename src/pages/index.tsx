@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout title='Joe Luna Dev'>
       <Box style={{ position: 'relative', width: '100vw', borderBottom: '10px solid #000' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: '65%', position: 'absolute', zIndex: '555', fontWeight: 700, color: '#fff', top: '12%', left: 'calc(100vw - 98vw)', padding: 0, textAlign: 'left', '@media(max-width: 994px)': { textAlign: 'center', alignItems: 'center', width: '100%', left: 0, top: '8%' } }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '65%', position: 'absolute', zIndex: '555', fontWeight: 700, color: '#fff', top: '12%', left: 'calc(100vw - 98vw)', padding: 0, textAlign: 'left', '@media(max-width: 994px)': { textAlign: 'center', alignItems: 'center', width: '100%', left: 0, top: '2%' } }}>
           <Image style={{ width: '400px', height: '450px', borderRadius: '50px 0 50px 0' }} src={require('../assets/images/my-images/joe_two.jpg')} alt={'Joseph Luna profile photo two'} />
           <Box style={{ backgroundColor: 'rgba(0,0,0,0.5)', padding: '2%', borderRadius: '8px', marginTop: '10px', width: '100%' }}>
             <Typography variant='h1' sx={{ '@media(max-width: 794px)': { fontSize: '3.5em' } }}>
@@ -113,7 +113,10 @@ export default function Home() {
                 </Typography>
                 <Typography variant='body1'>
                   React is my go-to when it comes to creating new projects or just creating proof of concepts both personally and professionally. I truly enjoy the simplicity the library offers, and how fast it allows development to scale. I feel most comfortable architecting and developing with in the React ecosystem. I have extensive experience with using Redux for application state as well as many more packages and third part libraries. Here are just a few of many projects I create that are
-                  using React. Oh, by the way this portfolio site is using Nextjs!
+                  using React. Oh, by the way this portfolio site is using Nextjs! you can checkout the code at my{' '}
+                  <a href='https://github.com/joeluna17/joseph-luna-portfolio' target='_blank' title='See my portfolio site code' rel='noreferrer' style={{ color: '#3178c6' }}>
+                    GitHub
+                  </a>
                 </Typography>
                 <Box style={{ marginTop: '15px' }}>
                   <Accordion>
