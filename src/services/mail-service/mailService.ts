@@ -3,7 +3,7 @@ import { IServiceResponse } from '@/interfaces/IServiceResponse'
 import axios from 'axios'
 
 const mailService = axios.create({
-  baseURL: 'http://localhost:4000/',
+  baseURL: process.env.NEXT_PUBLIC_MAIL_SERVICE_URL,
 })
 
 const endpoints = {
