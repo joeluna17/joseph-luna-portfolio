@@ -30,8 +30,8 @@ const Resume = () => {
   return (
     <Layout title='My Resume'>
       <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column', paddingTop: '3%', marginBottom: '2%' }}>
-        <Typography variant='h2' style={{ marginBottom: '2%', textAlign: 'center' }}>
-          JOE LUNA RESUME
+        <Typography variant='h4' style={{ marginBottom: '2%', textAlign: 'center' }}>
+          JOSEPH LUNA RESUME
         </Typography>
         <Box className='webViewer' ref={viewer} sx={{ height: '80vh', width: '80vw', '@media(max-width:594px)': { width: '95vw' } }}></Box>
         {/* <PDFViewer url={myResume} /> */}
