@@ -14,7 +14,11 @@ import MenuItem from '@mui/material/MenuItem'
 import CodeIcon from '@mui/icons-material/Code'
 import Link from 'next/link'
 
-const pages = ['Resume']
+const pages = [
+  { title: 'Resume', linkto: 'resume' },
+  { title: 'GitHub', linkto: 'https://github.com/joeluna17' },
+  { title: 'LinkedIn', linkto: 'https://www.linkedin.com/in/joseph-luna-dev/' },
+]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Header = () => {
@@ -61,7 +65,7 @@ const Header = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton size='large' aria-label='account of current user' aria-controls='menu-appbar' aria-haspopup='true' onClick={handleOpenNavMenu} color='inherit'>
-              <MenuIcon />
+              <MenuIcon style={{ color: '#fff' }} />
             </IconButton>
             <Menu
               id='menu-appbar'
@@ -81,10 +85,19 @@ const Header = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href={page}>
-                    <Typography textAlign='center'>{page}</Typography>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link href={'/'}>
+                  <Typography textAlign='center' style={{ color: '#0f0303' }}>
+                    Home
+                  </Typography>
+                </Link>
+              </MenuItem>
+              {pages.map((page, index) => (
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Link href={page.linkto}>
+                    <Typography textAlign='center' style={{ color: '#0f0303' }}>
+                      {page.title}
+                    </Typography>
                   </Link>
                 </MenuItem>
               ))}
@@ -111,10 +124,10 @@ const Header = () => {
             JOE LUNA
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Link key={page} href={page.toLowerCase()}>
+            {pages.map((page, index) => (
+              <Link key={index} href={page.linkto}>
                 <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                  {page}
+                  {page.title}
                 </Button>
               </Link>
             ))}
@@ -126,7 +139,7 @@ const Header = () => {
                 <Avatar alt='Joe Luna' src='https://avatars.githubusercontent.com/u/47259984?v=4' />
               </IconButton>
             </Tooltip>
-            <Menu
+            {/* <Menu
               sx={{ mt: '45px' }}
               id='menu-appbar'
               anchorEl={anchorElUser}
@@ -147,7 +160,7 @@ const Header = () => {
                   <Typography textAlign='center'>{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

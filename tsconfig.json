@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pdf-wroker.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pdf-wroker.js", "src/pages/resume.jsx"],
   "exclude": ["node_modules"]
 }
